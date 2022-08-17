@@ -14,7 +14,7 @@ import java.util.List;
 
 public class JsonAdapter extends RecyclerView.Adapter<JsonAdapter.JsonHolder> {
     Context  context;
-    List<JsonModel>jsonModelList=new ArrayList<>();
+    List<JsonModel> jsonModelList=new ArrayList<>();
     LayoutInflater layoutInflater;
 
     public JsonAdapter(Context context, List<JsonModel> jsonModelList) {
@@ -32,10 +32,17 @@ public class JsonAdapter extends RecyclerView.Adapter<JsonAdapter.JsonHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull JsonHolder holder, int position) {
-        holder.userid.setText(""+jsonModelList.get(position).getUserid());
         holder.id.setText(""+jsonModelList.get(position).getId());
-        holder.title.setText(""+jsonModelList.get(position).getTitle());
-        holder.body.setText(""+jsonModelList.get(position).getBody());
+        holder.name.setText(""+jsonModelList.get(position).getName());
+        holder.mobile.setText(""+jsonModelList.get(position).getMobile());
+        holder.dateInfo.setText(""+jsonModelList.get(position).getDateInfo());
+        holder.password.setText(""+jsonModelList.get(position).getPassword());
+        holder.email.setText(""+jsonModelList.get(position).getEmail());
+
+//        holder.userid.setText(""+jsonModelList.get(position).getUserid());
+//        holder.id.setText(""+jsonModelList.get(position).getId());
+//        holder.title.setText(""+jsonModelList.get(position).getTitle());
+//        holder.body.setText(""+jsonModelList.get(position).getBody());
 
     }
 
@@ -45,13 +52,16 @@ public class JsonAdapter extends RecyclerView.Adapter<JsonAdapter.JsonHolder> {
     }
 
     public class JsonHolder extends RecyclerView.ViewHolder {
-        TextView userid,id,title,body;
+        TextView id,name,mobile,dateInfo,password,email;
+
         public JsonHolder(@NonNull View itemView) {
             super(itemView);
-            userid=itemView.findViewById(R.id.UserID);
             id=itemView.findViewById(R.id.ID);
-            title=itemView.findViewById(R.id.Title);
-            body=itemView.findViewById(R.id.Body);
+            name=itemView.findViewById(R.id.Nameid);
+            mobile=itemView.findViewById(R.id.Mobileid);
+            dateInfo=itemView.findViewById(R.id.DateInfoid);
+            password=itemView.findViewById(R.id.Passwordid);
+            email=itemView.findViewById(R.id.Emailid);
         }
     }
 }

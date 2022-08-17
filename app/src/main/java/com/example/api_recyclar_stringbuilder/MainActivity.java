@@ -73,17 +73,23 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         JSONObject jsonObject= response.getJSONObject(i);
+                        StringBuilder id= new StringBuilder(jsonObject.getString("id"));
+                        StringBuilder name= new StringBuilder(jsonObject.getString("Name"));
+                        StringBuilder mobile= new StringBuilder(jsonObject.getString("Mobile"));
+                        StringBuilder datainfo= new StringBuilder(jsonObject.getString("DateInfo"));
+                        StringBuilder password= new StringBuilder(jsonObject.getString("Password"));
+                        StringBuilder email= new StringBuilder(jsonObject.getString("Email"));
 
-                        int userId=jsonObject.getInt("userId");
-                        int id=jsonObject.getInt("id");
-                        StringBuilder title= new StringBuilder(jsonObject.getString("title"));
-                        StringBuilder body= new StringBuilder(jsonObject.getString("body"));
 
-                        jsonModel=new JsonModel(userId,id,title,body);
+//                        int userId=jsonObject.getInt("userId");
+//                        int id=jsonObject.getInt("id");
+//                        StringBuilder title= new StringBuilder(jsonObject.getString("title"));
+//                        StringBuilder body= new StringBuilder(jsonObject.getString("body"));
+
+                        jsonModel=new JsonModel(id,name,mobile,datainfo,password,email);
                         jsonModelList.add(jsonModel);
                         jsonAdapter.notifyDataSetChanged();
-                        if (i==9)
-                            break;
+
 
                     } catch (JSONException e) {
                         e.printStackTrace();

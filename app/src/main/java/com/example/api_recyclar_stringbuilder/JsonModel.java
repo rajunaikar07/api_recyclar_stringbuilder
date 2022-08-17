@@ -1,46 +1,66 @@
 package com.example.api_recyclar_stringbuilder;
 
 public class JsonModel {
-    int userid, id;
 
-    StringBuilder title, body;
+    StringBuilder id, name, mobile, dateInfo, password, email;
 
-    public JsonModel(int userid, int id, StringBuilder title, StringBuilder body) {
-        this.userid = userid;
-        this.id = id;
-        this.title = title;
-        this.body = body;
-    }
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
-
-    public int getId() {
+    public StringBuilder getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(StringBuilder id) {
         this.id = id;
     }
 
-    public StringBuilder getTitle() {
-        return title;
+    public StringBuilder getName() {
+        return name;
     }
 
-    public void setTitle(StringBuilder title) {
-        this.title = title;
+    public void setName(StringBuilder name) {
+        this.name = name;
     }
 
-    public StringBuilder getBody() {
-        return body;
+    public StringBuilder getMobile() {
+        return mobile;
     }
 
-    public void setBody(StringBuilder body) {
-        this.body = body;
+    public void setMobile(StringBuilder mobile) {
+        this.mobile = mobile;
+    }
+
+    public StringBuilder getDateInfo() {
+        return dateInfo;
+    }
+
+    public void setDateInfo(StringBuilder dateInfo) {
+        this.dateInfo = dateInfo;
+    }
+
+    public StringBuilder getPassword() {
+        return password;
+    }
+
+    public void setPassword(StringBuilder password) {
+        this.password = password;
+    }
+
+    public StringBuilder getEmail() {
+        return email;
+    }
+
+    public void setEmail(StringBuilder email) {
+        this.email = email;
+    }
+
+    public JsonModel(StringBuilder id, StringBuilder name,
+                     StringBuilder mobile, StringBuilder dateInfo,
+                     StringBuilder password, StringBuilder email) {
+        this.id = id;
+        this.name = name;
+        this.mobile = mobile;
+        this.dateInfo = dateInfo;
+        this.password = password;
+        this.email = email;
     }
 }
+
